@@ -27,5 +27,6 @@ jobs:
 
     - name: Run tests
       env:
-        API_KEY: 1234abcd5678xyz
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }} 
       run: pytest -v
