@@ -1,4 +1,4 @@
-4name: Test macOS self-hosted runner
+name: Test macOS self-hosted runner
 
 on:
   workflow_dispatch:  # allows manual trigger
