@@ -7,7 +7,7 @@ on:
 
 jobs:
   test-run:
-    runs-on: self-hosted
+    runs-on: [self-hosted, macos-ephemeral]
     name: Verify runner setup
     steps:
       - name: Checkout repository
