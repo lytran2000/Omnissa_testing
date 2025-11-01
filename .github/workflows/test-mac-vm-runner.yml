@@ -1,0 +1,25 @@
+name: Test macOS self-hosted runner
+
+on:
+  workflow_dispatch:  # allows manual trigger
+  push:
+    branches: [ main ]
+
+jobs:
+  test-run:
+    runs-on: self-hosted
+    name: Verify runner setup
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print environment info
+        run: |
+          echo "Running on: $(uname -a)"
+          echo "User: $USER"
+          sw_vers
+          whoami
+
+      - name: Test network
+        run: |
+          ping -c 3 github.com
